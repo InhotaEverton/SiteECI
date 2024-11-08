@@ -8,26 +8,87 @@
     <link href="/style/fonts.css" rel="stylesheet">
     <link href="/style/media.css" rel="stylesheet">
     <title>Contato - ECI Informática</title>
+    <style>
+        /* Estilos para o cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #e2e1e1;
+        }
+
+        /* Estilos do título */
+        #title {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        #title h1, #title h2 {
+            margin: 0;
+        }
+
+        /* Estilos para o menu */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Estilos para a mensagem de confirmação */
+        .confirmation-message {
+            display: none;
+            padding: 15px;
+            margin-top: 15px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Animação de fade-out para ocultar a mensagem de confirmação */
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div id="title">
             <h1>ECI Informática</h1>
-            <h1>Tecnologia e Inovação</h1>
+            <h2>Tecnologia para sua Empresa</h2>
         </div>
-        <ul>
-            <a href="index.html"><li>Início</li></a>
-            <a href="servicos.html"><li>Serviços</li></a>
-            <a href="sobre.html"><li>Sobre</li></a>
-            <a href="contato.html"><li>Contato</li></a>
-            <a href="plano.html" id="plano-btn"><li>Contrate um plano</li></a>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <h2>Contato</h2>
         <p>Entre em contato conosco:</p>
-        <form action="/enviar-contato" method="post">
+        <form id="contact-form" action="/enviar-contato" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
             
@@ -39,10 +100,38 @@
             
             <input type="submit" value="Enviar">
         </form>
+        <div id="confirmation-message" class="confirmation-message">
+            Em breve entrarei em contato.
+        </div>
     </main>
 
     <footer>
         <p>© 2024 ECI Informática. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio real do formulário
+            
+            // Exibe a mensagem de confirmação
+            const confirmationMessage = document.getElementById('confirmation-message');
+            confirmationMessage.style.display = 'block';
+            confirmationMessage.classList.remove('fade-out'); // Garante que a mensagem está visível
+
+            // Reseta o formulário
+            this.reset();
+            
+            // Aplica o efeito de fade-out após 4 segundos
+            setTimeout(() => {
+                confirmationMessage.classList.add('fade-out');
+            }, 4000);
+
+            // Oculta a mensagem completamente após a transição
+            confirmationMessage.addEventListener('transitionend', () => {
+                confirmationMessage.style.display = 'none';
+                confirmationMessage.classList.remove('fade-out'); // Remove a classe para próximo uso
+            }, { once: true });
+        });
+    </script>
 </body>
 </html>

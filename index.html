@@ -7,14 +7,57 @@
     <link href="/style/style.css" rel="stylesheet">
     <link href="/style/fonts.css" rel="stylesheet">
     <link href="/style/media.css" rel="stylesheet">
-    <title>Início - ECI Informática</title>
+    <title>ECI Informática</title>
     <meta name="description" content="ECI Informática - Tecnologia e Inovação para sua Empresa.">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Cor de fundo do site */
+            margin: 0; /* Remove margens padrão do body */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que a altura mínima da página seja 100% da tela */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #d0d2d3; /* Cor azul do cabeçalho */
+        }
+
+        #title {
+            text-align: left;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        main {
+            flex: 1; /* Faz o main ocupar o espaço restante */
+        }
+
+        footer {
+            background-color: #d0d2d3; /* Cor de fundo do rodapé (opcional) */
+            text-align: center; /* Centraliza o texto no rodapé */
+            padding: 10px; /* Adiciona um pouco de espaço ao redor do texto */
+            margin-top: 50px; /* Move o rodapé mais para baixo */
+        }
+    </style>
 </head>
 <body>
     <header>
         <div id="title">
             <h1>ECI Informática</h1>
-            <h1>Tecnologia e Inovação</h1>
+            <h1><strong>Tecnologia para sua Empresa</strong></h1>
         </div>
         <nav>
             <ul>
@@ -22,16 +65,16 @@
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li><a href="plano.html" id="plano-btn">Contrate um plano</a></li>
+                <li><a href="cadastro.html" id="cadastro">Cadastro</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="inicio">
-            <h2>Bem-vindo à ECI Informática</h2>
-            <p>Tecnologia para sua Empresa.</p>
-            <img src="Images/tendencias-em-tecnologia-para-2023-o-que-ja-vingou-o-que-ficou-pelo-caminho-e-novas-apostas.jpg" alt="Imagem de tecnologia">
+            <div style="text-align: center;">
+                <img src="Images/tendencias-em-tecnologia-para-2023-o-que-ja-vingou-o-que-ficou-pelo-caminho-e-novas-apostas.jpg" height="750px" alt="Logo ECI">
+            </div>
         </section>
     </main>
 

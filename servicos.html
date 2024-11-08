@@ -5,6 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços - ECI Informática</title>
     <link href="/style/style.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif; /* Fonte padrão */
+            background-color: #f0f0f0; /* Cor de fundo do site */
+        }
+        header {
+            background-color: #d0d2d3; /* Cor de fundo do cabeçalho */
+            color: black; /* Cor do texto do cabeçalho */
+            display: flex; /* Usar flexbox */
+            flex-direction: column; /* Colocar os itens em coluna */
+            align-items: center; /* Centralizar horizontalmente */
+            padding: 20px; /* Espaçamento interno */
+        }
+        header h1 {
+            margin: 0; /* Remove margem do título principal */
+        }
+        header h2 {
+            margin: 0; /* Remove margem do subtítulo */
+            font-weight: normal; /* Estilo do subtítulo */
+        }
+        nav {
+            margin-top: 10px; /* Espaço entre o título e a navegação */
+        }
+        nav ul {
+            list-style-type: none; /* Remove os marcadores da lista */
+            padding: 0; /* Remove padding padrão */
+            display: flex; /* Usar flexbox para a lista */
+        }
+        nav ul li {
+            margin: 0 15px; /* Espaço entre os itens do menu */
+        }
+        nav ul li a {
+            color: black; /* Cor dos links */
+            text-decoration: none; /* Remove o sublinhado dos links */
+            transition: color 0.3s; /* Efeito de transição ao passar o mouse */
+        }
+        nav ul li a:hover {
+            color: #FFD700; /* Cor ao passar o mouse */
+        }
+        main {
+            padding: 20px; /* Espaçamento interno do main */
+        }
+        footer {
+            background-color: #e0dede; /* Cor de fundo do rodapé */
+            color: black; /* Cor do texto do rodapé */
+            text-align: center; /* Centraliza o texto no rodapé */
+            padding: 10px; /* Espaçamento interno */
+            position: relative; /* Posiciona o rodapé */
+            bottom: 0; /* Coloca o rodapé na parte inferior */
+            width: 100%; /* Largura total */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,11 +80,21 @@
         </section>
         <section>
             <h3>Revenda de Software</h3>
-            <p>Implatação de sistema de gestão financeira para sua empresa, chega de anotar tudo no papel.</p>
+            <p>Implantação de sistema de gestão financeira para sua empresa, chega de anotar tudo no papel.</p>
         </section>
         <section>
             <h3>Suporte Técnico</h3>
-            <p>Suporte é diferenciado, atendemos em até 60 minutos de acordo com o plano.</p>
+            <p>Suporte diferenciado, atendemos em até 60 minutos de acordo com o plano.</p>
+        </section>
+        <section id="plano">
+            <h2>Confira Nossos Planos</h2>
+            <p>Escolha o plano que melhor se adapta às suas necessidades e entre em contato conosco para mais informações.</p>
+            <h3>Planos Disponíveis</h3>
+            <ul>
+                <li><strong>Plano Básico:</strong> Suporte técnico básico e manutenção preventiva. <strong>R$ 80,00/mês</strong></li>
+                <li><strong>Plano Avançado:</strong> Inclui suporte técnico avançado, manutenção preventiva e consultoria em TI. <strong>R$ 150,00/mês</strong></li>
+                <li><strong>Plano Premium:</strong> Todos os benefícios do Plano Avançado, além de suporte 24/7 e serviços personalizados. <strong>R$ 250,00/mês</strong></li>
+            </ul>
         </section>
     </main>
     <footer>
